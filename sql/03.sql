@@ -6,3 +6,15 @@
  * HINT:
  * This requires joining from the category table down to the actor table.
  */
+select first_name || ' ' || last_name as actor_name
+from actor
+join film_actor using(actor_id)
+join film_category using(film_id)
+join category using(category_id)
+where category.name = 'Children'
+and actor.actor_id not in(
+	select actor_id from actor
+	inner join film_actor using(actor_id)
+	inner join film_category using(film_id)
+	inner join category using(category_id)
+	where category.name= 'Horror');
