@@ -6,7 +6,7 @@
 CREATE TABLE project (
 	created_at TIMESTAMPTZ, 
 	updated_at TIMESTAMPTZ, 
-	author_id BIGINT NOT NULL 
+	author_id BIGINT NOT NULL, 
     id SERIAL PRIMARY KEY, 
 	target_id INTEGER NOT NULL, 
 	project_id INTEGER NOT NULL UNIQUE, 
